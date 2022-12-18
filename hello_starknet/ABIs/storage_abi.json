@@ -1,0 +1,64 @@
+[
+    {
+        "members": [
+            {
+                "name": "first_name",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "last_name",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "User",
+        "size": 2,
+        "type": "struct"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "felt"
+            }
+        ],
+        "name": "extend_range",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "User"
+            }
+        ],
+        "name": "vote",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "a_len",
+                "type": "felt"
+            },
+            {
+                "name": "a",
+                "type": "felt*"
+            },
+            {
+                "name": "b_len",
+                "type": "felt"
+            },
+            {
+                "name": "b",
+                "type": "felt*"
+            }
+        ],
+        "name": "compare",
+        "outputs": [],
+        "type": "function"
+    }
+]
