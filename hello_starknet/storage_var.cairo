@@ -86,3 +86,35 @@ func sum_points_array(
     let (res) = sum_points_array(a_len = a_len -1, a = &a[1]);
     return (res = Point(x = res.x + [a].x, y = res.y + [a].y));
 }
+
+
+// ###################################################################################################
+
+from starkware.starknet.common.syscalls import get_tx_info
+
+@external
+func get_tx_max_fee{syscall_ptr: felt*}() -> (res: felt){
+    let (tx) = get_tx_info();
+    return (res = tx.max_fee);
+}
+
+// ###################################################################################################
+
+from starkware.starknet.common.syscalls import (
+    get_block_number,
+    get_block_timestamp,
+)
+
+struct X {
+    blockNo: felt,
+    blockTime: felt,
+}
+
+@external
+func get_numbers{syscall_ptr: felt* }() -> (res: X){
+    let (block_number) = get_block_number();
+    let (block_timestamp) = get_block_timestamp();
+
+    return (res = X(blockNo= block_number, blockTime= block_timestamp));
+}
+

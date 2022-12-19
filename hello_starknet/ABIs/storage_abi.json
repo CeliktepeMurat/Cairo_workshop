@@ -34,6 +34,23 @@
         "type": "struct"
     },
     {
+        "members": [
+            {
+                "name": "blockNo",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "blockTime",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "X",
+        "size": 2,
+        "type": "struct"
+    },
+    {
         "inputs": [
             {
                 "name": "user",
@@ -111,6 +128,28 @@
             {
                 "name": "res",
                 "type": "Point"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_tx_max_fee",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_numbers",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "X"
             }
         ],
         "type": "function"
