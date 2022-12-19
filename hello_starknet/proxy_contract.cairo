@@ -9,6 +9,23 @@ namespace IBalanceContract {
     }
 }
 
+@storage_var
+func balance() -> (res: felt) {
+}
+
+@external
+func increase_my_balance{syscall_ptr: felt*, range_check_ptr}(
+    class_hash: felt, amount: felt
+) {
+    IBalanceContract.library_call_increase_balance(
+        class_hash = class_hash, 
+        amount= amount
+    );
+    
+    return();
+}
+
+
 @external
 func call_increase_balance{
     syscall_ptr: felt*, 
@@ -35,3 +52,21 @@ func call_get_balance{
 
     return(res=res);
 }
+
+@view
+func get_my_balance{
+    syscall_ptr: felt*,
+    pedersen_ptr: HashBuiltin*,
+    range_check_ptr,
+}() -> (res: felt) {
+    let (res) = balance.read();
+    return (res=res);
+}
+
+// ###################################################################################
+
+from starkware.starknet.common.syscalls import (
+    get_contract_address,
+)
+
+let (contract_address) = get_contract_address(); // similar to address(this) in solidity
