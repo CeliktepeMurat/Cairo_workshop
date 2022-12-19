@@ -18,6 +18,23 @@
             "type": "struct"
         },
         {
+            "members": [
+                {
+                    "name": "x",
+                    "offset": 0,
+                    "type": "felt"
+                },
+                {
+                    "name": "y",
+                    "offset": 1,
+                    "type": "felt"
+                }
+            ],
+            "name": "Point",
+            "size": 2,
+            "type": "struct"
+        },
+        {
             "inputs": [
                 {
                     "name": "user",
@@ -61,6 +78,23 @@
             "name": "compare",
             "outputs": [],
             "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "name": "points",
+                    "type": "(Point, Point)"
+                }
+            ],
+            "name": "sum_points",
+            "outputs": [
+                {
+                    "name": "res",
+                    "type": "Point"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     "entry_points_by_type": {
@@ -73,6 +107,10 @@
             {
                 "offset": "0xcb",
                 "selector": "0x132bdf85fc8aa10ac3c22f02317f8f53d4b4f52235ed1eabb3a4cbbe08b5c41"
+            },
+            {
+                "offset": "0x11e",
+                "selector": "0x2d9ade053caaea1c8bc78d2b2c4e8eea8c8e370379f5c3eed0c540c0b7d08d6"
             },
             {
                 "offset": "0xef",
@@ -361,6 +399,37 @@
             "0x480680017fff8000",
             "0x0",
             "0x48127ffa7fff8000",
+            "0x208b7fff7fff7ffe",
+            "0x482a7ffc7ffa8000",
+            "0x482a7ffd7ffb8000",
+            "0x208b7fff7fff7ffe",
+            "0x40780017fff7fff",
+            "0x1",
+            "0x4003800080007ffb",
+            "0x4003800180007ffc",
+            "0x4826800180008000",
+            "0x2",
+            "0x480a7ffd7fff8000",
+            "0x4828800080007ffe",
+            "0x480a80007fff8000",
+            "0x208b7fff7fff7ffe",
+            "0x482680017ffd8000",
+            "0x4",
+            "0x402a7ffd7ffc7fff",
+            "0x480280007ffd8000",
+            "0x480280017ffd8000",
+            "0x480280027ffd8000",
+            "0x480280037ffd8000",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffed",
+            "0x480280027ffb8000",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffed",
+            "0x480280007ffb8000",
+            "0x480280017ffb8000",
+            "0x48127ffb7fff8000",
+            "0x48127ffb7fff8000",
+            "0x48127ffb7fff8000",
             "0x208b7fff7fff7ffe"
         ],
         "debug_info": {
@@ -369,10 +438,12 @@
                 "autogen/starknet/arg_processor/094d9a5d7692b731a5a82d062337a88ff347bedb83a105cf98bffb8d23e20efb.cairo": "// Check that the length is non-negative.\nassert [range_check_ptr] = __calldata_arg_b_len;\nlet range_check_ptr = range_check_ptr + 1;\n// Create the reference.\nlet __calldata_arg_b = cast(__calldata_ptr, felt*);\n// Use 'tempvar' instead of 'let' to avoid repeating this computation for the\n// following arguments.\ntempvar __calldata_ptr = __calldata_ptr + __calldata_arg_b_len * 1;\n",
                 "autogen/starknet/arg_processor/0ae74b618268537af5fcaa41212b7ca3dfd2d216fa900cc3732f21ca90f31672.cairo": "let __calldata_arg_user = [__calldata_ptr];\nlet __calldata_ptr = __calldata_ptr + 1;\n",
                 "autogen/starknet/arg_processor/3258d46abe643a0e849c4bcd0edb6c6838d393099a30ee7eb033e8fb91113973.cairo": "let __calldata_arg_user = [\n    cast(__calldata_ptr, __main__.User*)];\nlet __calldata_ptr = __calldata_ptr + 2;\n",
+                "autogen/starknet/arg_processor/54715848fc428af54cd2de5d212e848b3835271f832b7a11ec1992926569d5e9.cairo": "// Create a reference to ret_value.res as felt*.\nlet __return_value_tmp: felt* = cast(&ret_value.res, felt*);\nassert [__return_value_ptr + 0] = [__return_value_tmp + 0];\nassert [__return_value_ptr + 1] = [__return_value_tmp + 1];\nlet __return_value_ptr = __return_value_ptr + 2;\n",
                 "autogen/starknet/arg_processor/57e9539856a64b09aab722c6d1632e2a678bad6497bc1a89fe93d71f52b84b0a.cairo": "// Check that the length is non-negative.\nassert [range_check_ptr] = __calldata_arg_a_len;\nlet range_check_ptr = range_check_ptr + 1;\n// Create the reference.\nlet __calldata_arg_a = cast(__calldata_ptr, felt*);\n// Use 'tempvar' instead of 'let' to avoid repeating this computation for the\n// following arguments.\ntempvar __calldata_ptr = __calldata_ptr + __calldata_arg_a_len * 1;\n",
                 "autogen/starknet/arg_processor/727555f2009f986262e3734047e4872ce91f6e169f46c5851ce3aea4350a85d0.cairo": "let __calldata_arg_b_len = [__calldata_ptr];\nlet __calldata_ptr = __calldata_ptr + 1;\n",
                 "autogen/starknet/arg_processor/c31620b02d4d706f0542c989b2aadc01b0981d1f6a5933a8fe4937ace3d70d92.cairo": "let __calldata_actual_size =  __calldata_ptr - cast([cast(fp + (-3), felt**)], felt*);\n",
                 "autogen/starknet/arg_processor/c3ab09a6c45464e53594f367b17c2a25979816c5f5bdcbe3c0ceecf46263bffd.cairo": "let __calldata_arg_a_len = [__calldata_ptr];\nlet __calldata_ptr = __calldata_ptr + 1;\n",
+                "autogen/starknet/arg_processor/f98a2084985f15468108897d87583bfe5a5021f5ee652e1d0fda0589d321f0b2.cairo": "let __calldata_arg_points = [\n    cast(__calldata_ptr, (__main__.Point, __main__.Point)*)];\nlet __calldata_ptr = __calldata_ptr + 4;\n",
                 "autogen/starknet/external/compare/2213a590dd9df79bfb1a682459238f4c687204115ef43866bfacd2da95e9a7a2.cairo": "let ret_value = __wrapped_func{}(a_len=__calldata_arg_a_len, a=__calldata_arg_a, b_len=__calldata_arg_b_len, b=__calldata_arg_b,);\n%{ memory[ap] = segments.add() %}        // Allocate memory for return value.\ntempvar retdata: felt*;\nlet retdata_size = 0;\n",
                 "autogen/starknet/external/compare/3f2c77ab4e9866f148094b3f3c2497496b7ce8700b8370e7f1bc10658a33d640.cairo": "let syscall_ptr = [cast([cast(fp + (-5), felt**)] + 0, felt*)];\n",
                 "autogen/starknet/external/compare/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)];\n",
@@ -383,6 +454,12 @@
                 "autogen/starknet/external/extend_range/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, starkware.cairo.common.cairo_builtins.HashBuiltin**)];\n",
                 "autogen/starknet/external/extend_range/b2c52ca2d2a8fc8791a983086d8716c5eacd0c3d62934914d2286f84b98ff4cb.cairo": "let syscall_ptr = [cast([cast(fp + (-5), felt**)] + 0, felt**)];\n",
                 "autogen/starknet/external/extend_range/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo": "return (syscall_ptr,pedersen_ptr,range_check_ptr,retdata_size,retdata);\n",
+                "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo": "func sum_points_encode_return(ret_value: (res: __main__.Point), range_check_ptr) -> (\n        range_check_ptr: felt, data_len: felt, data: felt*) {\n    %{ memory[ap] = segments.add() %}\n    alloc_locals;\n    local __return_value_ptr_start: felt*;\n    let __return_value_ptr = __return_value_ptr_start;\n    with range_check_ptr {\n    }\n    return (\n        range_check_ptr=range_check_ptr,\n        data_len=__return_value_ptr - __return_value_ptr_start,\n        data=__return_value_ptr_start);\n}\n",
+                "autogen/starknet/external/sum_points/3f2c77ab4e9866f148094b3f3c2497496b7ce8700b8370e7f1bc10658a33d640.cairo": "let syscall_ptr = [cast([cast(fp + (-5), felt**)] + 0, felt*)];\n",
+                "autogen/starknet/external/sum_points/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)];\n",
+                "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo": "let ret_value = __wrapped_func{}(points=__calldata_arg_points,);\nlet (range_check_ptr, retdata_size, retdata) = sum_points_encode_return(ret_value, range_check_ptr);\n",
+                "autogen/starknet/external/sum_points/a2e7932207d079a1e1f1fffb9d05f1edfbc5140541b28bb23f4aae8472bc1b49.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, felt*)];\n",
+                "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo": "return (syscall_ptr,pedersen_ptr,range_check_ptr,retdata_size,retdata);\n",
                 "autogen/starknet/external/vote/6ec36f7b3c720e5d100cb1c9655024adf1a27fd257d49d2ec6df2652003eb8de.cairo": "let ret_value = __wrapped_func{syscall_ptr=syscall_ptr, pedersen_ptr=pedersen_ptr, range_check_ptr=range_check_ptr}(user=__calldata_arg_user,);\n%{ memory[ap] = segments.add() %}        // Allocate memory for return value.\ntempvar retdata: felt*;\nlet retdata_size = 0;\n",
                 "autogen/starknet/external/vote/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)];\n",
                 "autogen/starknet/external/vote/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, starkware.cairo.common.cairo_builtins.HashBuiltin**)];\n",
@@ -7358,6 +7435,1146 @@
                         "start_col": 1,
                         "start_line": 1
                     }
+                },
+                "273": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 42,
+                        "end_line": 70,
+                        "input_file": {
+                            "filename": "storage_var.cairo"
+                        },
+                        "start_col": 17,
+                        "start_line": 70
+                    }
+                },
+                "274": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 42,
+                        "end_line": 71,
+                        "input_file": {
+                            "filename": "storage_var.cairo"
+                        },
+                        "start_col": 17,
+                        "start_line": 71
+                    }
+                },
+                "275": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 7,
+                        "end_line": 73,
+                        "input_file": {
+                            "filename": "storage_var.cairo"
+                        },
+                        "start_col": 5,
+                        "start_line": 68
+                    }
+                },
+                "276": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [
+                        {
+                            "location": {
+                                "end_col": 38,
+                                "end_line": 3,
+                                "input_file": {
+                                    "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 16,
+                                        "end_line": 67,
+                                        "input_file": {
+                                            "filename": "storage_var.cairo"
+                                        },
+                                        "start_col": 6,
+                                        "start_line": 67
+                                    },
+                                    "While handling return value of"
+                                ],
+                                "start_col": 5,
+                                "start_line": 3
+                            },
+                            "n_prefix_newlines": 0
+                        }
+                    ],
+                    "inst": {
+                        "end_col": 18,
+                        "end_line": 4,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 5,
+                        "start_line": 4
+                    }
+                },
+                "278": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 60,
+                        "end_line": 3,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/54715848fc428af54cd2de5d212e848b3835271f832b7a11ec1992926569d5e9.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 55,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 45,
+                                "start_line": 67
+                            },
+                            "While handling return value 'res'"
+                        ],
+                        "start_col": 1,
+                        "start_line": 3
+                    }
+                },
+                "279": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 60,
+                        "end_line": 4,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/54715848fc428af54cd2de5d212e848b3835271f832b7a11ec1992926569d5e9.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 55,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 45,
+                                "start_line": 67
+                            },
+                            "While handling return value 'res'"
+                        ],
+                        "start_col": 1,
+                        "start_line": 4
+                    }
+                },
+                "280": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 48,
+                        "end_line": 5,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/54715848fc428af54cd2de5d212e848b3835271f832b7a11ec1992926569d5e9.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 55,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 36,
+                                        "end_line": 11,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While handling return value of"
+                                        ],
+                                        "start_col": 18,
+                                        "start_line": 11
+                                    },
+                                    "While expanding the reference '__return_value_ptr' in:"
+                                ],
+                                "start_col": 45,
+                                "start_line": 67
+                            },
+                            "While handling return value 'res'"
+                        ],
+                        "start_col": 26,
+                        "start_line": 5
+                    }
+                },
+                "282": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 80,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 40,
+                                        "end_line": 10,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While handling return value of"
+                                        ],
+                                        "start_col": 25,
+                                        "start_line": 10
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 65,
+                        "start_line": 1
+                    }
+                },
+                "283": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 63,
+                        "end_line": 11,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 18,
+                        "start_line": 11
+                    }
+                },
+                "284": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 35,
+                        "end_line": 5,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 38,
+                                        "end_line": 12,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While handling return value of"
+                                        ],
+                                        "start_col": 14,
+                                        "start_line": 12
+                                    },
+                                    "While expanding the reference '__return_value_ptr_start' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 11,
+                        "start_line": 5
+                    }
+                },
+                "285": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 40,
+                        "end_line": 12,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/sum_points/00415e23d5e91d0d2b9c60c62610af645b5d3e3a9637f696f46d6e7c15f44959.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 5,
+                        "start_line": 9
+                    }
+                },
+                "286": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 40,
+                        "end_line": 3,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/f98a2084985f15468108897d87583bfe5a5021f5ee652e1d0fda0589d321f0b2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 39,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 45,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/arg_processor/c31620b02d4d706f0542c989b2aadc01b0981d1f6a5933a8fe4937ace3d70d92.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "parent_location": [
+                                                    {
+                                                        "end_col": 57,
+                                                        "end_line": 1,
+                                                        "input_file": {
+                                                            "filename": "autogen/starknet/arg_processor/01cba52f8515996bb9d7070bde81ff39281d096d7024a558efcba6e1fd2402cf.cairo"
+                                                        },
+                                                        "parent_location": [
+                                                            {
+                                                                "end_col": 16,
+                                                                "end_line": 67,
+                                                                "input_file": {
+                                                                    "filename": "storage_var.cairo"
+                                                                },
+                                                                "start_col": 6,
+                                                                "start_line": 67
+                                                            },
+                                                            "While handling calldata of"
+                                                        ],
+                                                        "start_col": 35,
+                                                        "start_line": 1
+                                                    },
+                                                    "While expanding the reference '__calldata_actual_size' in:"
+                                                ],
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While handling calldata of"
+                                        ],
+                                        "start_col": 31,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_ptr' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 67
+                            },
+                            "While handling calldata argument 'points'"
+                        ],
+                        "start_col": 22,
+                        "start_line": 3
+                    }
+                },
+                "288": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 58,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/01cba52f8515996bb9d7070bde81ff39281d096d7024a558efcba6e1fd2402cf.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While handling calldata of"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
+                },
+                "289": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 61,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/f98a2084985f15468108897d87583bfe5a5021f5ee652e1d0fda0589d321f0b2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 39,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 41,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_arg_points' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 67
+                            },
+                            "While handling calldata argument 'points'"
+                        ],
+                        "start_col": 29,
+                        "start_line": 1
+                    }
+                },
+                "290": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 61,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/f98a2084985f15468108897d87583bfe5a5021f5ee652e1d0fda0589d321f0b2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 39,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 41,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_arg_points' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 67
+                            },
+                            "While handling calldata argument 'points'"
+                        ],
+                        "start_col": 29,
+                        "start_line": 1
+                    }
+                },
+                "291": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 61,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/f98a2084985f15468108897d87583bfe5a5021f5ee652e1d0fda0589d321f0b2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 39,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 41,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_arg_points' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 67
+                            },
+                            "While handling calldata argument 'points'"
+                        ],
+                        "start_col": 29,
+                        "start_line": 1
+                    }
+                },
+                "292": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 61,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/f98a2084985f15468108897d87583bfe5a5021f5ee652e1d0fda0589d321f0b2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 39,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 41,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_arg_points' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 67
+                            },
+                            "While handling calldata argument 'points'"
+                        ],
+                        "start_col": 29,
+                        "start_line": 1
+                    }
+                },
+                "293": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 16,
+                        "end_line": 67,
+                        "input_file": {
+                            "filename": "storage_var.cairo"
+                        },
+                        "start_col": 6,
+                        "start_line": 67
+                    }
+                },
+                "295": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 67,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 99,
+                                        "end_line": 2,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 84,
+                                        "start_line": 2
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 23,
+                        "start_line": 1
+                    }
+                },
+                "296": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 100,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 48,
+                        "start_line": 2
+                    }
+                },
+                "298": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 63,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/3f2c77ab4e9866f148094b3f3c2497496b7ce8700b8370e7f1bc10658a33d640.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 20,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 9,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'syscall_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 19,
+                        "start_line": 1
+                    }
+                },
+                "299": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 64,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/a2e7932207d079a1e1f1fffb9d05f1edfbc5140541b28bb23f4aae8472bc1b49.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 33,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 21,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 20,
+                        "start_line": 1
+                    }
+                },
+                "300": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 21,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 49,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 34,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 6,
+                        "start_line": 2
+                    }
+                },
+                "301": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 35,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 50,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'retdata_size' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 23,
+                        "start_line": 2
+                    }
+                },
+                "302": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 44,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/86e9e7eeeeada6cc25228c223ea623e715da487d1acfe63f8d8cac2f1b21bdd6.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 70,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 16,
+                                                "end_line": 67,
+                                                "input_file": {
+                                                    "filename": "storage_var.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 67
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 63,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'retdata' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 37,
+                        "start_line": 2
+                    }
+                },
+                "303": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 72,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/sum_points/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 16,
+                                "end_line": 67,
+                                "input_file": {
+                                    "filename": "storage_var.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 67
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
                 }
             }
         },
@@ -7509,12 +8726,45 @@
                         "reference_ids": {}
                     }
                 }
+            ],
+            "276": [
+                {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.sum_points_encode_return"
+                    ],
+                    "code": "memory[ap] = segments.add()",
+                    "flow_tracking_data": {
+                        "ap_tracking": {
+                            "group": 19,
+                            "offset": 0
+                        },
+                        "reference_ids": {}
+                    }
+                }
             ]
         },
         "identifiers": {
             "__main__.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
+            },
+            "__main__.Point": {
+                "full_name": "__main__.Point",
+                "members": {
+                    "x": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    },
+                    "y": {
+                        "cairo_type": "felt",
+                        "offset": 1
+                    }
+                },
+                "size": 2,
+                "type": "struct"
             },
             "__main__.User": {
                 "full_name": "__main__.User",
@@ -7792,6 +9042,38 @@
                 "type": "const",
                 "value": 0
             },
+            "__main__.sum_points": {
+                "decorators": [
+                    "view"
+                ],
+                "pc": 273,
+                "type": "function"
+            },
+            "__main__.sum_points.Args": {
+                "full_name": "__main__.sum_points.Args",
+                "members": {
+                    "points": {
+                        "cairo_type": "(__main__.Point, __main__.Point)",
+                        "offset": 0
+                    }
+                },
+                "size": 4,
+                "type": "struct"
+            },
+            "__main__.sum_points.ImplicitArgs": {
+                "full_name": "__main__.sum_points.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.sum_points.Return": {
+                "cairo_type": "(res: __main__.Point)",
+                "type": "type_definition"
+            },
+            "__main__.sum_points.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
             "__main__.user_voted": {
                 "type": "namespace"
             },
@@ -8033,6 +9315,75 @@
                 "type": "alias"
             },
             "__wrappers__.extend_range_encode_return.memcpy": {
+                "destination": "starkware.cairo.common.memcpy.memcpy",
+                "type": "alias"
+            },
+            "__wrappers__.sum_points": {
+                "decorators": [
+                    "view"
+                ],
+                "pc": 286,
+                "type": "function"
+            },
+            "__wrappers__.sum_points.Args": {
+                "full_name": "__wrappers__.sum_points.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.sum_points.ImplicitArgs": {
+                "full_name": "__wrappers__.sum_points.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.sum_points.Return": {
+                "cairo_type": "(syscall_ptr: felt, pedersen_ptr: felt, range_check_ptr: felt, size: felt, retdata: felt*)",
+                "type": "type_definition"
+            },
+            "__wrappers__.sum_points.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__wrappers__.sum_points.__wrapped_func": {
+                "destination": "__main__.sum_points",
+                "type": "alias"
+            },
+            "__wrappers__.sum_points_encode_return": {
+                "decorators": [],
+                "pc": 276,
+                "type": "function"
+            },
+            "__wrappers__.sum_points_encode_return.Args": {
+                "full_name": "__wrappers__.sum_points_encode_return.Args",
+                "members": {
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 2
+                    },
+                    "ret_value": {
+                        "cairo_type": "(res: __main__.Point)",
+                        "offset": 0
+                    }
+                },
+                "size": 3,
+                "type": "struct"
+            },
+            "__wrappers__.sum_points_encode_return.ImplicitArgs": {
+                "full_name": "__wrappers__.sum_points_encode_return.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.sum_points_encode_return.Return": {
+                "cairo_type": "(range_check_ptr: felt, data_len: felt, data: felt*)",
+                "type": "type_definition"
+            },
+            "__wrappers__.sum_points_encode_return.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 1
+            },
+            "__wrappers__.sum_points_encode_return.memcpy": {
                 "destination": "starkware.cairo.common.memcpy.memcpy",
                 "type": "alias"
             },
