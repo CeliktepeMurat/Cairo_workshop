@@ -72,3 +72,17 @@ func sum_points(points: (Point, Point)) -> (res: Point) {
         )
     );
 }
+
+// ###################################################################################################
+
+@external
+func sum_points_array(
+    a_len: felt, a: Point*
+) -> (res : Point) {
+    if(a_len == 0) {
+        return (res = Point(x=0, y=0));
+    }
+
+    let (res) = sum_points_array(a_len = a_len -1, a = &a[1]);
+    return (res = Point(x = res.x + [a].x, y = res.y + [a].y));
+}

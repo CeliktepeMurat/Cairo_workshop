@@ -94,5 +94,25 @@
         ],
         "stateMutability": "view",
         "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "a_len",
+                "type": "felt"
+            },
+            {
+                "name": "a",
+                "type": "Point*"
+            }
+        ],
+        "name": "sum_points_array",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "Point"
+            }
+        ],
+        "type": "function"
     }
 ]
