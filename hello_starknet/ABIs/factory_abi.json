@@ -1,0 +1,28 @@
+[
+    {
+        "data": [
+            {
+                "name": "ownable",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "EmitOwnableDeployed",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "name": "owner_address",
+                "type": "felt"
+            },
+            {
+                "name": "ownable_class_hash",
+                "type": "felt"
+            }
+        ],
+        "name": "deploy_ownable",
+        "outputs": [],
+        "type": "function"
+    }
+]
