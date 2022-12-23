@@ -3,6 +3,10 @@
 ## Starknet Execution Commands
 
 ```
+source ~/cairo_venv/bin/activate
+```
+
+```
 export STARKNET_NETWORK=alpha-goerli
 ```
 
