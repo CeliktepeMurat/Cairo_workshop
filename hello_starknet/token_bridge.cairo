@@ -30,7 +30,7 @@ func increase_balance{
     range_check_ptr
 } (user: felt, amount: felt) {
     let (res) = balance.read(user=user);
-    tempvar (new_balance) = res + amount;
+    tempvar new_balance = res + amount;
     balance.write(user=user, value=new_balance);
     return ();
 }
@@ -44,7 +44,7 @@ func withdraw{
     assert_nn(amount);
 
     let (res) = balance.read(user=user);
-    tempvar (new_balance) = res - amount;
+    tempvar new_balance = res - amount;
 
     assert_nn(new_balance);
 
@@ -57,7 +57,7 @@ func withdraw{
     send_message_to_l1(
         to_address=L1_CONTRACT_ADDRESS,
         payload_size=3,
-        payload,
+        payload=payload,
     );
 
     return ();
@@ -73,7 +73,7 @@ func deposit{
 
     let (res) = balance.read(user=user);
     
-    tempvar (new_balance) = res + amount;
+    tempvar new_balance = res + amount;
     balance.write(user=user, value=new_balance);
     
     return ();
