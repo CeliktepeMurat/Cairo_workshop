@@ -60,19 +60,25 @@
         "0x1104800180018000",
         "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffd3",
         "0x20780017fff7ffd",
+        "0x9",
+        "0x480680017fff8000",
         "0x3",
+        "0x400280007ffc7fff",
+        "0x480680017fff8000",
+        "0x3",
+        "0x400280017ffc7fff",
         "0x208b7fff7fff7ffe",
         "0x480a7ffc7fff8000",
         "0x482680017ffc8000",
         "0x2",
         "0x1104800180018000",
-        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffe4",
+        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffde",
         "0x482680017ffc8000",
         "0x2",
         "0x482680017ffd8000",
         "0x800000000000011000000000000000000000000000000000000000000000000",
         "0x1104800180018000",
-        "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffff2",
+        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffec",
         "0x208b7fff7fff7ffe",
         "0x40780017fff7fff",
         "0xa",
@@ -97,12 +103,12 @@
         "0x400780017fff8009",
         "0x3",
         "0x1104800180018000",
-        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffa4",
+        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffff9e",
         "0x48127ffe7fff8000",
         "0x480680017fff8000",
         "0x4",
         "0x1104800180018000",
-        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffd4",
+        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffce",
         "0x208b7fff7fff7ffe"
     ],
     "debug_info": {
@@ -1408,7 +1414,34 @@
                 },
                 "hints": [],
                 "inst": {
-                    "end_col": 19,
+                    "end_col": 32,
+                    "end_line": 41,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 31,
+                    "start_line": 41
+                }
+            },
+            "60": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.verify_loc_list"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 5,
+                        "offset": 18
+                    },
+                    "reference_ids": {
+                        "__main__.verify_loc_list.__temp18": 30,
+                        "__main__.verify_loc_list.loc_list": 28,
+                        "__main__.verify_loc_list.n_steps": 29
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 33,
                     "end_line": 41,
                     "input_file": {
                         "filename": "puzlle.cairo"
@@ -1417,7 +1450,90 @@
                     "start_line": 41
                 }
             },
-            "59": {
+            "61": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.verify_loc_list"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 5,
+                        "offset": 18
+                    },
+                    "reference_ids": {
+                        "__main__.verify_loc_list.__temp18": 30,
+                        "__main__.verify_loc_list.loc_list": 28,
+                        "__main__.verify_loc_list.n_steps": 29
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 32,
+                    "end_line": 42,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 31,
+                    "start_line": 42
+                }
+            },
+            "63": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.verify_loc_list"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 5,
+                        "offset": 19
+                    },
+                    "reference_ids": {
+                        "__main__.verify_loc_list.__temp18": 30,
+                        "__main__.verify_loc_list.__temp19": 31,
+                        "__main__.verify_loc_list.loc_list": 28,
+                        "__main__.verify_loc_list.n_steps": 29
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 33,
+                    "end_line": 42,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 9,
+                    "start_line": 42
+                }
+            },
+            "64": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.verify_loc_list"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 5,
+                        "offset": 19
+                    },
+                    "reference_ids": {
+                        "__main__.verify_loc_list.__temp18": 30,
+                        "__main__.verify_loc_list.__temp19": 31,
+                        "__main__.verify_loc_list.loc_list": 28,
+                        "__main__.verify_loc_list.n_steps": 29
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 19,
+                    "end_line": 43,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 9,
+                    "start_line": 43
+                }
+            },
+            "65": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1442,12 +1558,12 @@
                     "parent_location": [
                         {
                             "end_col": 40,
-                            "end_line": 44,
+                            "end_line": 48,
                             "input_file": {
                                 "filename": "puzlle.cairo"
                             },
                             "start_col": 32,
-                            "start_line": 44
+                            "start_line": 48
                         },
                         "While expanding the reference 'loc_list' in:"
                     ],
@@ -1455,7 +1571,7 @@
                     "start_line": 37
                 }
             },
-            "60": {
+            "66": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1473,15 +1589,15 @@
                 "hints": [],
                 "inst": {
                     "end_col": 73,
-                    "end_line": 44,
+                    "end_line": 48,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 49,
-                    "start_line": 44
+                    "start_line": 48
                 }
             },
-            "62": {
+            "68": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1499,15 +1615,15 @@
                 "hints": [],
                 "inst": {
                     "end_col": 74,
-                    "end_line": 44,
+                    "end_line": 48,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 44
+                    "start_line": 48
                 }
             },
-            "64": {
+            "70": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1525,15 +1641,15 @@
                 "hints": [],
                 "inst": {
                     "end_col": 44,
-                    "end_line": 47,
+                    "end_line": 51,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 20,
-                    "start_line": 47
+                    "start_line": 51
                 }
             },
-            "66": {
+            "72": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1551,15 +1667,15 @@
                 "hints": [],
                 "inst": {
                     "end_col": 30,
-                    "end_line": 48,
+                    "end_line": 52,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 19,
-                    "start_line": 48
+                    "start_line": 52
                 }
             },
-            "68": {
+            "74": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1577,15 +1693,15 @@
                 "hints": [],
                 "inst": {
                     "end_col": 6,
-                    "end_line": 49,
+                    "end_line": 53,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 46
+                    "start_line": 50
                 }
             },
-            "70": {
+            "76": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.verify_loc_list"
@@ -1603,15 +1719,15 @@
                 "hints": [],
                 "inst": {
                     "end_col": 15,
-                    "end_line": 51,
+                    "end_line": 55,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 51
+                    "start_line": 55
                 }
             },
-            "71": {
+            "77": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.main"
@@ -1626,81 +1742,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 18,
-                    "end_line": 56,
+                    "end_line": 60,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 56
-                }
-            },
-            "73": {
-                "accessible_scopes": [
-                    "__main__",
-                    "__main__.main"
-                ],
-                "flow_tracking_data": {
-                    "ap_tracking": {
-                        "group": 7,
-                        "offset": 10
-                    },
-                    "reference_ids": {}
-                },
-                "hints": [],
-                "inst": {
-                    "end_col": 7,
-                    "end_line": 66,
-                    "input_file": {
-                        "filename": "puzlle.cairo"
-                    },
-                    "start_col": 5,
-                    "start_line": 58
-                }
-            },
-            "75": {
-                "accessible_scopes": [
-                    "__main__",
-                    "__main__.main"
-                ],
-                "flow_tracking_data": {
-                    "ap_tracking": {
-                        "group": 7,
-                        "offset": 10
-                    },
-                    "reference_ids": {}
-                },
-                "hints": [],
-                "inst": {
-                    "end_col": 7,
-                    "end_line": 66,
-                    "input_file": {
-                        "filename": "puzlle.cairo"
-                    },
-                    "start_col": 5,
-                    "start_line": 58
-                }
-            },
-            "77": {
-                "accessible_scopes": [
-                    "__main__",
-                    "__main__.main"
-                ],
-                "flow_tracking_data": {
-                    "ap_tracking": {
-                        "group": 7,
-                        "offset": 10
-                    },
-                    "reference_ids": {}
-                },
-                "hints": [],
-                "inst": {
-                    "end_col": 7,
-                    "end_line": 66,
-                    "input_file": {
-                        "filename": "puzlle.cairo"
-                    },
-                    "start_col": 5,
-                    "start_line": 58
+                    "start_line": 60
                 }
             },
             "79": {
@@ -1718,12 +1765,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "81": {
@@ -1741,12 +1788,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "83": {
@@ -1764,12 +1811,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "85": {
@@ -1787,12 +1834,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "87": {
@@ -1810,12 +1857,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "89": {
@@ -1833,12 +1880,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "91": {
@@ -1856,12 +1903,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 7,
-                    "end_line": 66,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 58
+                    "start_line": 62
                 }
             },
             "93": {
@@ -1874,19 +1921,17 @@
                         "group": 7,
                         "offset": 10
                     },
-                    "reference_ids": {
-                        "__main__.main.loc_tuple": 30
-                    }
+                    "reference_ids": {}
                 },
                 "hints": [],
                 "inst": {
-                    "end_col": 38,
-                    "end_line": 68,
+                    "end_col": 7,
+                    "end_line": 70,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
-                    "start_col": 23,
-                    "start_line": 68
+                    "start_col": 5,
+                    "start_line": 62
                 }
             },
             "95": {
@@ -1897,37 +1942,108 @@
                 "flow_tracking_data": {
                     "ap_tracking": {
                         "group": 7,
+                        "offset": 10
+                    },
+                    "reference_ids": {}
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 7,
+                    "end_line": 70,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 5,
+                    "start_line": 62
+                }
+            },
+            "97": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.main"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 7,
+                        "offset": 10
+                    },
+                    "reference_ids": {}
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 7,
+                    "end_line": 70,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 5,
+                    "start_line": 62
+                }
+            },
+            "99": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.main"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 7,
+                        "offset": 10
+                    },
+                    "reference_ids": {
+                        "__main__.main.loc_tuple": 32
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 38,
+                    "end_line": 72,
+                    "input_file": {
+                        "filename": "puzlle.cairo"
+                    },
+                    "start_col": 23,
+                    "start_line": 72
+                }
+            },
+            "101": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.main"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 7,
                         "offset": 12
                     },
                     "reference_ids": {
-                        "__main__.main.__fp__": 31,
-                        "__main__.main.loc_tuple": 30
+                        "__main__.main.__fp__": 33,
+                        "__main__.main.loc_tuple": 32
                     }
                 },
                 "hints": [],
                 "inst": {
                     "end_col": 16,
-                    "end_line": 68,
+                    "end_line": 72,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 47,
-                            "end_line": 71,
+                            "end_line": 75,
                             "input_file": {
                                 "filename": "puzlle.cairo"
                             },
                             "start_col": 20,
-                            "start_line": 71
+                            "start_line": 75
                         },
                         "While expanding the reference '__fp__' in:"
                     ],
                     "start_col": 10,
-                    "start_line": 68
+                    "start_line": 72
                 }
             },
-            "96": {
+            "102": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.main"
@@ -1938,22 +2054,22 @@
                         "offset": 13
                     },
                     "reference_ids": {
-                        "__main__.main.__fp__": 31,
-                        "__main__.main.loc_tuple": 30
+                        "__main__.main.__fp__": 33,
+                        "__main__.main.loc_tuple": 32
                     }
                 },
                 "hints": [],
                 "inst": {
                     "end_col": 20,
-                    "end_line": 72,
+                    "end_line": 76,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 19,
-                    "start_line": 72
+                    "start_line": 76
                 }
             },
-            "98": {
+            "104": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.main"
@@ -1964,22 +2080,22 @@
                         "offset": 14
                     },
                     "reference_ids": {
-                        "__main__.main.__fp__": 31,
-                        "__main__.main.loc_tuple": 30
+                        "__main__.main.__fp__": 33,
+                        "__main__.main.loc_tuple": 32
                     }
                 },
                 "hints": [],
                 "inst": {
                     "end_col": 6,
-                    "end_line": 73,
+                    "end_line": 77,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 70
+                    "start_line": 74
                 }
             },
-            "100": {
+            "106": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.main"
@@ -1990,19 +2106,19 @@
                         "offset": 0
                     },
                     "reference_ids": {
-                        "__main__.main.__fp__": 31,
-                        "__main__.main.loc_tuple": 30
+                        "__main__.main.__fp__": 33,
+                        "__main__.main.loc_tuple": 32
                     }
                 },
                 "hints": [],
                 "inst": {
                     "end_col": 15,
-                    "end_line": 75,
+                    "end_line": 79,
                     "input_file": {
                         "filename": "puzlle.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 75
+                    "start_line": 79
                 }
             }
         }
@@ -2051,7 +2167,7 @@
         },
         "__main__.main": {
             "decorators": [],
-            "pc": 71,
+            "pc": 77,
             "type": "function"
         },
         "__main__.main.Args": {
@@ -2083,7 +2199,7 @@
                         "group": 7,
                         "offset": 12
                     },
-                    "pc": 95,
+                    "pc": 101,
                     "value": "[cast(ap + (-2), felt**)]"
                 }
             ],
@@ -2098,7 +2214,7 @@
                         "group": 7,
                         "offset": 10
                     },
-                    "pc": 93,
+                    "pc": 99,
                     "value": "[cast(fp, (__main__.Location, __main__.Location, __main__.Location, __main__.Location, __main__.Location)*)]"
                 }
             ],
@@ -2325,6 +2441,36 @@
         "__main__.verify_loc_list.SIZEOF_LOCALS": {
             "type": "const",
             "value": 0
+        },
+        "__main__.verify_loc_list.__temp18": {
+            "cairo_type": "felt",
+            "full_name": "__main__.verify_loc_list.__temp18",
+            "references": [
+                {
+                    "ap_tracking_data": {
+                        "group": 5,
+                        "offset": 18
+                    },
+                    "pc": 60,
+                    "value": "[cast(ap + (-1), felt*)]"
+                }
+            ],
+            "type": "reference"
+        },
+        "__main__.verify_loc_list.__temp19": {
+            "cairo_type": "felt",
+            "full_name": "__main__.verify_loc_list.__temp19",
+            "references": [
+                {
+                    "ap_tracking_data": {
+                        "group": 5,
+                        "offset": 19
+                    },
+                    "pc": 63,
+                    "value": "[cast(ap + (-1), felt*)]"
+                }
+            ],
+            "type": "reference"
         },
         "__main__.verify_loc_list.loc_list": {
             "cairo_type": "__main__.Location*",
@@ -2989,10 +3135,26 @@
             },
             {
                 "ap_tracking_data": {
+                    "group": 5,
+                    "offset": 18
+                },
+                "pc": 60,
+                "value": "[cast(ap + (-1), felt*)]"
+            },
+            {
+                "ap_tracking_data": {
+                    "group": 5,
+                    "offset": 19
+                },
+                "pc": 63,
+                "value": "[cast(ap + (-1), felt*)]"
+            },
+            {
+                "ap_tracking_data": {
                     "group": 7,
                     "offset": 10
                 },
-                "pc": 93,
+                "pc": 99,
                 "value": "[cast(fp, (__main__.Location, __main__.Location, __main__.Location, __main__.Location, __main__.Location)*)]"
             },
             {
@@ -3000,7 +3162,7 @@
                     "group": 7,
                     "offset": 12
                 },
-                "pc": 95,
+                "pc": 101,
                 "value": "[cast(ap + (-2), felt**)]"
             }
         ]

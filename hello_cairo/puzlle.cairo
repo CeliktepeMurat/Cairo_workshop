@@ -38,6 +38,8 @@ func verify_loc_list(loc_list: Location*, n_steps: felt) {
     verify_valid_loc(loc = loc_list);
 
     if (n_steps == 0) {
+        assert loc_list.row = 3;
+        assert loc_list.col = 3;
         return ();
     }
 
