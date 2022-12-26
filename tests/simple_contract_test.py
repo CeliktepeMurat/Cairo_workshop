@@ -15,4 +15,5 @@ async def test_increase_balance():
     await contract.increase_balance(amount=500).execute()
     
     execution_result = await contract.get_balance().call()
+    
     assert execution_result.result == (1500,)
